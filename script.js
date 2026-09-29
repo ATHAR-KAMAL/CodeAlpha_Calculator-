@@ -133,3 +133,52 @@ function calculatePercentage() {
 
     updateDisplay();
 }
+// Keyboard Support
+
+document.addEventListener("keydown", function(event) {
+
+    const key = event.key;
+
+    // Numbers
+    if (key >= "0" && key <= "9") {
+        appendNumber(key);
+    }
+
+    // Decimal
+    else if (key === ".") {
+        appendDecimal();
+    }
+
+    // Operators
+    else if (key === "+") {
+        chooseOperation("+");
+    }
+
+    else if (key === "-") {
+        chooseOperation("-");
+    }
+
+    else if (key === "*") {
+        chooseOperation("×");
+    }
+
+    else if (key === "/") {
+        chooseOperation("÷");
+    }
+
+    // Calculate
+    else if (key === "Enter" || key === "=") {
+        calculate();
+    }
+
+    // Delete
+    else if (key === "Backspace") {
+        deleteNumber();
+    }
+
+    // Clear
+    else if (key === "Escape") {
+        clearDisplay();
+    }
+
+});
